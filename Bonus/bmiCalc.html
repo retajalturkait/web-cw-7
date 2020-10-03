@@ -56,6 +56,9 @@
         var weight = document.getElementById("weight").value;
         // (مؤشر كتلة الجسم = الوزن/(الطول*الطول
         // 👇🏻 قم بترجمة المعادلة السابقة إلى كود
+
+        var bmi = 0;
+         bmi = weight/(height*height);
         // ثم قم باختبار قيمة الناتج لتتحقق الشروط التالية
         /*
             BMIالحالة               مؤشر كتلة الجسم                        
@@ -64,8 +67,16 @@
               يا للهول! 😲          أكبر من أو يساوي 30
               لا أدري! 🤷🏻‍♀️                   أي شي ثاني
         */
-        if (condition) {
+        if (bmi<20) {
           document.getElementById("status").innerHTML = "أنت نحيف للغاية";
+        }else
+        if (bmi==20 && bmi<=29) {
+          document.getElementById("status").innerHTML = "وزنك جيد";
+        }else
+        if (bmi<=30) {
+          document.getElementById("status").innerHTML = "  يا للهول! 😲";
+        }else{
+          document.getElementById("status").innerHTML = " لا ادري 🤷🏻‍♀️ ";
         }
         // أكمل
       }
